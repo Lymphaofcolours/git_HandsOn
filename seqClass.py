@@ -14,23 +14,23 @@ if len(sys.argv) == 1:
 args = parser.parse_args()
 
 args.seq = args.seq.upper()                 # Note we just added this line
-if re.search('^[ACGTU]+$', args.seq):
+if re.search('^[ACGTU]+$', args.seq):           # This searches for the strutcure of the query line
     if re.search('T', args.seq):
-        print ('The sequence is DNA')
+        print ('The sequence is DNA')              # Specifies if it is DNA
     elif re.search('U', args.seq):
-        print ('The sequence is RNA')
+        print ('The sequence is RNA')              # Specifies if it is RNA
     else:
-        print ('The sequence can be DNA or RNA')
+        print ('The sequence can be DNA or RNA')   # Specifies if it may be both
 else:
-    print ('The sequence is not, neither can be, nor will be, DNA nor RNA')
+    print ('The sequence is not, neither can be, nor will be, DNA nor RNA')  # Specifies if it cannot be any of both
 
 if args.motif:
-    args.motif = args.motif.upper()
-    print(f'Motif search enabled: looking for motif "{args.motif}" in sequence "{args.seq}"... ', end = '')
-    if re.search(args.motif, args.seq):
-        print("FOUND")
+    args.motif = args.motif.upper()                                          # Changes query to uppercase
+    print(f'Motif search enabled: looking for motif "{args.motif}" in sequence "{args.seq}"... ', end = '')   # Prints results
+    if re.search(args.motif, args.seq):        
+        print("FOUND")                  # Prints found if found
     else:
-        print("NOT FOUND")
+        print("NOT FOUND")            # Prints not found if not found
 
 =======
         print("FOUND")
