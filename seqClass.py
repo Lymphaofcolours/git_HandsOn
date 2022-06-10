@@ -18,7 +18,9 @@ if re.search('^[ACGTU]+$', args.seq):           # This searches for the strutcur
     if re.search('T', args.seq):
         print ('The sequence is DNA')              # Specifies if it is DNA
     elif re.search('U', args.seq):
-        print ('The sequence is RNA')              # Specifies if it is RNA
+        print ('The sequence is RNA')
+    elif re.search('^[TU]+$', args.seq):
+	print ('The sequence is nothing')
     else:
         print ('The sequence can be DNA or RNA')   # Specifies if it may be both
 else:
@@ -32,8 +34,3 @@ if args.motif:
     else:
         print("NOT FOUND")            # Prints not found if not found
 
-=======
-        print("FOUND")
-    else:
-        print("NOT FOUND, BUT HE TRIED")
->>>>>>> motif
